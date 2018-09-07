@@ -1,0 +1,21 @@
+{
+  "name": "semen/lesson",
+  "description": "description_text",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Lesson\\Help\\":"lesson/help",
+      "Lesson\\Work\\":"lesson/work",
+      "Lesson\\Notification\\":"lesson/notification",
+      "Patterns\\Singletone\\":"patterns/singletone",
+      "Patterns\\Factory_method\\":"patterns/factory_method"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  php-fpm:
+    image: vladitot/php7.2
+    environment:
+      DOMAIN: ""
+      SERVERSSETUP: "local"
+      CRONTAB: "* * * * * root php /var/www/artisan schedule:run >> /dev/null 2>&1"
+    volumes:
+      - ./:/var/www
+      - /home/tobimaru/.ssh:/root/.ssh
+    links:
+      - redis
+    restart: always
+
+  nginx:
+    image: vladitot/nginx:latest
+    environment:
+      DOMAIN: ""
+      SERVERSSETUP: "local"
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www
+    links:
+       - php-fpm
+  redis:
+    image: redis:latest
+    restart: always
+    expose:
+      - "6379"

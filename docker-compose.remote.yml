@@ -1,0 +1,46 @@
+version: '2'
+
+volumes:
+  projectdir_ci_monitoring:
+    driver: local
+
+services:
+  php-fpm:
+    image: vladitot/php7.2
+    environment:
+      DOMAIN: ""
+      SERVERSSETUP: "remote"
+      waiter_start_for: "git-sync"
+      CRONTAB: "* * * * * root php /var/www/artisan schedule:run >> /dev/null 2>&1"
+    volumes:
+      - projectdir_ci_monitoring:/var/www
+    links:
+      - redis
+    restart: always
+
+  nginx:
+    image: vladitot/nginx:latest
+    environment:
+      DOMAIN: ""
+      SERVERSSETUP: "remote"
+      waiter_start_for: "git-sync"
+    volumes:
+      - projectdir_ci_monitoring:/var/www
+    links:
+       - php-fpm
+  redis:
+    image: redis:latest
+    restart: always
+    expose:
+      - "6379"
+
+  git-sync:
+    image: vladitot/git-sync
+    environment:
+      waiter_ending_host: "git-sync"
+      GIT_SYNC_REPO: "https://robot:dfsfkjdjsi43u589374xnmjghjkkkKKKJJ@gitlab.online-express.ru/Vladimir.Zakotnev/test_gui.git"
+      GIT_SYNC_DEST: "git"
+      GIT_SYNC_BRANCH: "master"
+    volumes:
+      - projectdir_ci_monitoring:/base/git:z
+    restart: always
