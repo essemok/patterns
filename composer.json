@@ -15,7 +15,9 @@
       "Lesson\\Work\\":"lesson/work",
       "Lesson\\Notification\\":"lesson/notification",
       "Patterns\\Singletone\\":"patterns/singletone",
-      "Patterns\\Factory_method\\":"patterns/factory_method"
+      "Patterns\\Factory_method\\":"patterns/factory_method",
+      "Patterns\\Abstract_factory_method\\":"patterns/abstract_factory_method",
+      "Patterns\\Abstract_factory_method\\Encoders\\":"patterns/abstract_factory_method/encoders"
     }
   }
 }
