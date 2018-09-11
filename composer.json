@@ -17,7 +17,12 @@
       "Patterns\\Singletone\\":"patterns/singletone",
       "Patterns\\Factory_method\\":"patterns/factory_method",
       "Patterns\\Abstract_factory_method\\":"patterns/abstract_factory_method",
-      "Patterns\\Abstract_factory_method\\Encoders\\":"patterns/abstract_factory_method/encoders"
+      "Patterns\\Abstract_factory_method\\Encoders\\":"patterns/abstract_factory_method/encoders",
+      "Patterns\\Prototype\\":"patterns/prototype",
+      "Patterns\\Prototype\\Fauna\\":"patterns/prototype/fauna",
+      "Patterns\\Prototype\\Forest\\":"patterns/prototype/forest",
+      "Patterns\\Prototype\\Sea\\":"patterns/prototype/sea",
+      "Patterns\\Prototype\\Plains\\":"patterns/prototype/plains"
     }
   }
 }
