@@ -11,9 +11,11 @@
   ],
   "autoload": {
     "psr-4": {
+      "Exception\\":"exception/",
       "Lesson\\Help\\":"lesson/help",
       "Lesson\\Work\\":"lesson/work",
       "Lesson\\Notification\\":"lesson/notification",
+      "Patterns\\Composite\\":"patterns/composite",
       "Patterns\\Singletone\\":"patterns/singletone",
       "Patterns\\Factory_method\\":"patterns/factory_method",
       "Patterns\\Abstract_factory_method\\":"patterns/abstract_factory_method",
