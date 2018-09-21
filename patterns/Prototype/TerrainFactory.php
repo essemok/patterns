@@ -19,9 +19,9 @@ class TerrainFactory
 
     public function __construct(Sea $sea, Plains $plains, Forest $forest)
     {
-        $this->sea = $sea;
-        $this->plains = $plains;
-        $this->forest = $forest;
+        $this->sea      = $sea;
+        $this->plains   = $plains;
+        $this->forest   = $forest;
     }
 
     public function getSea()
