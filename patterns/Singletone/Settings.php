@@ -10,7 +10,7 @@ namespace Patterns\Singletone;
 class Settings
 {
     private $preference = [];
-    private static $instance;
+    private static $instance = null;
 
     private function __construct()
     {

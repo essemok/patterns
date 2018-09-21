@@ -13,9 +13,9 @@ use Patterns\Abstract_factory_method\Encoders\MegaTodoEncoder;
 
 class MegaCommunicManager extends CommunicManager
 {
-    const APPT = 1;
-    const TODO = 2;
-    const CONTACT = 3;
+    const APPT      = 1;
+    const TODO      = 2;
+    const CONTACT   = 3;
 
     public function getHeaderText()
     {
